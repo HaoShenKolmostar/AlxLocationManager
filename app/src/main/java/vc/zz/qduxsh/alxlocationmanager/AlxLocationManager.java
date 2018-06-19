@@ -65,8 +65,8 @@ public class AlxLocationManager implements GoogleApiClient.ConnectionCallbacks,G
     //下面这三个是没拿到第一次经纬度的时候耗电抓取经纬度的策略
 
     private static final int MAX_deviation = isGeoApp?60:100;//首次获取最小精确度限制
-    public static final int FAST_UPDATE_INTERVAL = isGeoApp?10000:20000; // 10 sec 平均更新时间,同时也是没有获取成功的刷新间隔，是耗电量的重要参数，普通APP 20s,敏感型10s
-    private static final int FATEST_INTERVAL = 5000; // 5 sec 最短更新时间
+    public static final int FAST_UPDATE_INTERVAL = isGeoApp?1000:20000; // 10 sec 平均更新时间,同时也是没有获取成功的刷新间隔，是耗电量的重要参数，普通APP 20s,敏感型10s
+    private static final int FATEST_INTERVAL = 1000; // 5 sec 最短更新时间
     public static final int FAST_DISPLACEMENT = isGeoApp?1:10; // 10 meters 为最小侦听距离,如果当前APP位置敏感，那就填1m
 
     //下面这个是省电抓取经纬度的策略,敏感型APP不会开启省电策略
